@@ -1,0 +1,11 @@
+{
+	"TelegramToken": "",
+	"SaucenaoToken": "",
+	"UserAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0",
+	"GoogleSearchURL": "https://www.google.com/searchbyimage/upload",
+	"SaucenaoSearchURL": "http://saucenao.com/search.php?output_type=2&db=999&numres=4&api_key=",
+	"SearchTermPrefix": "\" style=\"font-style:italic\">",
+	"SearchTermSuffix": "</a>",
+	"GoogleResultLinkPrefix": "<div class=\"yuRUbf\"><a href=\"",
+	"GoogleResultLinkSuffix": "\" data-ved=\""
+}
