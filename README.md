@@ -23,7 +23,7 @@ You can use the bot by adding it to a group and replying to a message you want t
 - [Telegram](https://core.telegram.org/bots#3-how-do-i-create-a-bot)
 - [Saucenao](https://saucenao.com/user.php)
 
-2. From botfather add two commands to your bot `/sauce` and `/animesauce`
+2. From botfather add two commands to your bot `/sauce` and `/animesauce` and disable privacy mode
 
 3. clone this repository
 
