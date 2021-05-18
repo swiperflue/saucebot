@@ -310,6 +310,18 @@ func main() {
 		return
 	}
 
+	// create a log file
+
+	logFile, err := os.OpenFile("saucebot.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Printf("Failed to open/create log file %s\n", err)
+		return
+	}
+	defer logFile.Close()
+
+	mw := io.MultiWriter(os.Stdout, logFile)
+	log.SetOutput(mw)
+
 	// create the bot
 	bot, err := tb.NewBot(tb.Settings{
 		Token:     Conf.TelegramToken,
@@ -331,6 +343,7 @@ func main() {
 		}
 
 		// get the sauce
+		log.Printf("user [%s - %d] requested sauce.\n", m.Sender.Username, m.Sender.ID)
 		sauce, err := get_sauce("tmp")
 		if err != nil {
 			bot.Reply(rt, err.Error())
@@ -364,6 +377,7 @@ func main() {
 		}
 
 		// get the sauce
+		log.Printf("user [%s - %d] requested sauce.\n", m.Sender.Username, m.Sender.ID)
 		sauce, err := get_anime_sauce("tmp")
 		if err != nil {
 			bot.Reply(rt, err.Error())
