@@ -15,6 +15,7 @@ You can use the bot by adding it to a group and replying to a message you want t
 
 ## Dependencies
 - golang
+- [tucnak/telebot](https://github.com/tucnak/telebot)
 
 ## Installation
 1. Get your Telegram and saucenow API KEYs
