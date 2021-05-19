@@ -417,6 +417,10 @@ func main() {
 		bot.Reply(m, "Thank you hooman sensei")
 	})
 
+    bot.Handle("/contribute", func(m *tb.Message) {
+        bot.Reply(m, "Contribute to https://github.com/swiperflue/saucebot")
+    })
+
 	// run the bot
 	bot.Start()
 }
