@@ -1,0 +1,11 @@
+[Unit]
+Description=saucebot
+After=syslog.target network.target
+
+[Service]
+WorkingDirectory=pathplaceholder
+ExecStart=pathplaceholder/saucebot
+Restart=always
+User=userplaceholder
+[Install]
+WantedBy=multi-user.target
