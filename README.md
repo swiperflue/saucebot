@@ -54,3 +54,39 @@ go build .
 ```
 ./saucebot
 ```
+## Usage
+### Manual
+Here's how you run the bot manually:
+```
+nohup ./saucebot & disown
+nohup ./saucebot >/dev/null 2>&1 & disown # If you want to disable output
+```
+### Systemd Service
+Alternatively, you can create a new systemd service, which handles the bot
+restart in a way more neat way, with these commands:
+```
+sed -i 's/userplaceholder/BOTUSER/' saucebot.service
+sed -i 's/pathplaceholder/BOTPATH/g' saucebot.service
+sudo cp saucebot.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo service saucebot start
+```
+And to check the bot status you can simply type:
+```
+sudo service saucebot status
+```
+or, for reading the full log:
+```
+sudo journalctl -u saucebot.service
+```
+### Docker/Podman
+If you like docker or podman, you can easily build the container using the
+Dockerfile:
+```
+sudo docker build -m saucebot .
+```
+Then you can easily start the bot with:
+```
+sudo docker run -it saucebot
+```
+
